@@ -1,0 +1,13 @@
+{
+  "name": "floating-source RLC example",
+  "ground": "g",
+  "nodes": ["g", "n1", "n2"],
+  "branches": [
+    {"id": "vin", "type": "voltage_source", "from": "n1", "to": "n2", "phasor": {"real": 10.0, "imag": 0.0}},
+    {"id": "r1", "type": "resistor", "from": "n1", "to": "g", "r": 4.0},
+    {"id": "r2", "type": "resistor", "from": "n2", "to": "g", "r": 6.0},
+    {"id": "l1", "type": "inductor", "from": "n2", "to": "g", "l": 0.001},
+    {"id": "iin", "type": "current_source", "from": "g", "to": "n1", "phasor": {"real": 0.5, "imag": 0.2}}
+  ],
+  "frequencies": [50.0, 200.0]
+}
